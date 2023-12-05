@@ -11,4 +11,8 @@ class Company extends Model
         'email',
         'logo',
     ];
+
+    public function getDateAttribute(){
+        return $this->created_at->format('F j, Y');
+    }
 }
