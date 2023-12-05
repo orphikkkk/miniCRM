@@ -13,4 +13,16 @@ class Employee extends Model
         'email',
         'phone',
     ];
+
+    public function company()
+    {
+        return $this->belongsTo(Company::class);
+    }
+
+    public function getDateAttribute(){
+        return $this->created_at->format('F j, Y');
+    }
+    public function getNameAttribute(){
+        return $this->first_name . ' ' . $this->last_name;
+    }
 }

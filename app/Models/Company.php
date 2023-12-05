@@ -15,4 +15,8 @@ class Company extends Model
     public function getDateAttribute(){
         return $this->created_at->format('F j, Y');
     }
+
+    public function employees(){
+        return $this->hasMany(Employee::class);
+    }
 }
